@@ -58,7 +58,7 @@ class ReadOnlySubscriber implements EventSubscriber
     /** @param OnClassMetadataNotFoundEventArgs $eventArgs */
     public function onClassMetadataNotFound(OnClassMetadataNotFoundEventArgs $eventArgs)
     {
-        if (class_implements(
+        if (is_subclass_of(
             $eventArgs->getClassName(),
             'steevanb\\DoctrineReadOnlyHydrator\\Entity\\ReadOnlyEntityInterface'
         )) {
